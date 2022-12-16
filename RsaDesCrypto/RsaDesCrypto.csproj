@@ -7,4 +7,18 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Resources\cloud-folder.png" />
+    <None Remove="Resources\usual-folder.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\cloud-folder.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\usual-folder.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
 </Project>

@@ -1,0 +1,88 @@
+﻿<Window x:Class="RsaDesCrypto.DesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RsaDesCrypto"
+        mc:Ignorable="d"
+        Title="DesWindow" Height="450" Width="400">
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style TargetType="TextBox">
+                <Setter Property="FontSize" Value="14" />
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <TabControl>
+            <TabItem>
+                <TabItem.Header>Encrypt</TabItem.Header>
+                <StackPanel Margin="10 1">
+                    <Grid Margin="0 2">
+                        <Label>From:</Label>
+                        <TextBox x:Name="FromEncrypt" Margin="100 0 40 0"></TextBox>
+                        <Button x:Name="FromEncBtn" HorizontalAlignment="Right" Margin="0" Width="30" Click="FromEncBtn_Click">
+                            <Image Height="20" Width="20" Source="/Resources/usual-folder.png"></Image>
+                        </Button>
+                    </Grid>
+                    <Grid Margin="0 2">
+                        <Label>To:</Label>
+                        <TextBox x:Name="ToEncrypt" Margin="100 0 40 0"></TextBox>
+                        <Button x:Name="ToEncBtn" HorizontalAlignment="Right" Margin="0" Width="30" Click="ToEncBtn_Click">
+                            <Image Height="20" Width="20" Source="/Resources/cloud-folder.png"></Image>
+                        </Button>
+                    </Grid>
+                    <Grid Margin="0 2">
+                        <Label>Public key:</Label>
+                        <TextBox TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" AcceptsReturn="True" x:Name="PubKey" Margin="100 0 0 0"></TextBox>
+                    </Grid>
+                    <Grid Margin="0 2">
+                        <Button x:Name="EncryptButton" Margin="10,0,10,0" Click="EncryptButton_Click" Height="20" VerticalAlignment="Top">Encrypt!</Button>
+                    </Grid>
+                </StackPanel>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>Decrypt</TabItem.Header>
+                <StackPanel Margin="10 1">
+                    <Grid Margin="0 2">
+                        <Label>From:</Label>
+                        <TextBox x:Name="FromDecrypt" Margin="100 0 40 0"></TextBox>
+                        <Button x:Name="FromDecBtn" HorizontalAlignment="Right" Margin="0" Width="30" Click="FromDecBtn_Click">
+                            <Image Height="20" Width="20" Source="/Resources/cloud-folder.png"></Image>
+                        </Button>
+                    </Grid>
+                    <Grid Margin="0 2">
+                        <Label>To:</Label>
+                        <TextBox x:Name="ToDecrypt" Margin="100 0 40 0"></TextBox>
+                        <Button x:Name="ToDecBtn" HorizontalAlignment="Right" Margin="0" Width="30" Click="ToDecBtn_Click">
+                            <Image Height="20" Width="20" Source="/Resources/usual-folder.png"></Image>
+                        </Button>
+                    </Grid>
+                    <Grid Margin="0 2">
+                        <Label>Public key:</Label>
+                        <TextBox TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" AcceptsReturn="True" x:Name="PrivKey" Margin="100 0 0 0" MaxLines="2"></TextBox>
+                    </Grid>
+                    <Grid Margin="0 2">
+                        <Button x:Name="DecryptButton" Margin="10 0" Click="DecryptButton_Click">Decrypt!</Button>
+                    </Grid>
+                </StackPanel>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>Generate keys</TabItem.Header>
+                <StackPanel Margin="10 1">
+                    <Grid Margin="0 2">
+                        <Label>Path:</Label>
+                        <TextBox TextWrapping="Wrap" x:Name="GeneratePath" Margin="100 0 50 0"></TextBox>
+                        <Button x:Name="GeneratePathBtn" HorizontalAlignment="Right" Margin="0" Width="40" Click="GeneratePathBtn_Click">
+                            <!--<Image Height="20" Width="20" Source="/Resources/cloud-folder.png"></Image>-->
+                            Copy
+                        </Button>
+                    </Grid>
+                    <Grid Margin="0 2">
+                        <Button x:Name="GenerateButton" Margin="10 0" Click="GenerateButton_Click">Generate!</Button>
+                    </Grid>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
